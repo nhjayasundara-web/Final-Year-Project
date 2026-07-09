@@ -1,357 +1,216 @@
-# 🎗️ HOPE — Early Detection, Better Protection
+# HOPE - Early Detection, Better Protection
 
-### AI-Powered Breast Cancer Awareness, Detection & Support Platform
-**CIT310 – Information Technology Project | #CIT310_01_26_56 | SLTC 2022–2026**
+HOPE is a full stack healthcare support platform for breast cancer awareness, guided self-examination, risk education, AI-assisted image triage with a real-dataset training pipeline, emotional support, medicine availability tracking, provider communication, and patient community support.
 
-An intelligent healthcare platform designed to support breast cancer awareness, early-stage detection, emotional support, and community engagement. HOPE combines AI-powered image analysis, educational resources, counselling support, medicine guidance, and hospital services into one modern web application.
+The project follows the proposal requirements: React with TypeScript and Tailwind CSS on the frontend, Flask REST APIs on the backend, MongoDB Atlas support, TensorFlow/Keras model integration plus a real BUSI dataset training script, and cloud storage placeholders for uploaded images.
 
----
+> Medical safety note: HOPE is an educational and support system. It does not diagnose cancer, replace mammograms, replace pathology, or replace clinician review. Any breast change, symptom, abnormal image, or high-risk result should be reviewed by a qualified healthcare professional.
 
-## 🎨 Project Overview
+## Main features
 
-HOPE is developed as an academic Information Technology project focused on improving awareness and accessibility for breast cancer prevention and support. The platform empowers users through AI-assisted detection tools, educational content, healthcare resources, and supportive community features.
+- Warm responsive landing page inspired by the HOPE theme: soft cream background, rose accents, rounded cards, calming healthcare language, and mobile-first navigation.
+- Secure registration and login with password hashing and JWT authentication.
+- Awareness library with symptoms, risk factors, screening guidance, treatment navigation, and emotional support articles.
+- Guided self-examination module with monthly reminder support.
+- Educational risk checker with clear next-step recommendations.
+- AI image analysis endpoint that supports a trained TensorFlow/Keras model and includes a MobileNetV2 training pipeline for real breast ultrasound datasets such as BUSI. No synthetic images are used by the training script.
+- Medicine search and availability tracking using demo pharmacy inventory data.
+- Healthcare provider directory and appointment request flow.
+- Community forum with authenticated posts and comments.
+- Support hub with counsellor data, affirmations, emergency guidance, and educational resources.
+- MongoDB Atlas or local JSON storage fallback for easy development.
+- Docker setup for frontend, backend, and MongoDB.
 
----
+## Technology stack
 
-## ✨ Features
+| Layer | Technology |
+| --- | --- |
+| Frontend | React, TypeScript, Vite, Tailwind CSS |
+| Backend | Python, Flask, Flask-CORS |
+| Database | MongoDB Atlas or local JSON fallback |
+| AI | TensorFlow/Keras optional model loader, PIL/NumPy image preprocessing |
+| Storage | Local uploads by default, Cloudinary/Firebase placeholders |
+| Auth | JWT, Werkzeug password hashing |
+| Deployment | Docker Compose, Nginx frontend container, Gunicorn backend |
 
-### 🩺 AI-Powered Detection
+## Project structure
 
-* Upload breast scan images for AI analysis
-* TensorFlow/Keras-powered prediction system
-* Detection result visualization
-* Symptom checker assistance
-
-### 📚 Awareness & Education
-
-* Breast cancer awareness articles
-* Self-examination guidance
-* Risk factor quizzes
-* Educational resources for early prevention
-
-### 💬 Community Support
-
-* Community discussion forum
-* Share experiences and advice
-* Motivational support feed
-* User engagement features
-
-### ❤️ Emotional & Counselling Support
-
-* Counselling information cards
-* Mental health support resources
-* Motivational content system
-
-### 💊 Medicine & Pharmacy Services
-
-* Medicine search functionality
-* Nearby pharmacy details
-* Medicine information management
-
-### 🏥 Hospital Assistance
-
-* Hospital information system
-* Interactive hospital map
-* Nearby treatment center details
-
-### 🔐 Authentication & Security
-
-* User registration and login
-* Secure authentication system
-* Protected dashboard access
-
-### 📱 Responsive Modern UI
-
-* Clean healthcare-focused interface
-* Mobile responsive design
-* Built with Tailwind CSS
-* Modern reusable UI components
-
----
-
-## 🛠️ Tech Stack
-
-| Layer    | Technology                   |
-| -------- | ---------------------------- |
-| Frontend | React.js + TypeScript + Vite |
-| Styling  | Tailwind CSS                 |
-| Backend  | Python Flask                 |
-| Database | MongoDB Atlas                |
-| AI/ML    | TensorFlow / Keras           |
-| Storage  | Firebase / Cloudinary        |
-| API      | REST API                     |
-
-
----
-
-## 📁 Full Project Structure
-
-```
-hope-project/
-├── frontend/                        # React.js + TypeScript + Tailwind CSS
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── assets/                  # Images, icons, fonts
-│   │   ├── styles/
-│   │   │   └── globals.css          # Global CSS variables & base styles
-│   │   ├── types/
-│   │   │   └── index.ts             # Global TypeScript types/interfaces
-│   │   ├── lib/
-│   │   │   ├── api.ts               # Axios API client
-│   │   │   └── utils.ts             # Utility functions
-│   │   ├── hooks/
-│   │   │   ├── useAuth.ts           # Auth state hook
-│   │   │   ├── useApi.ts            # Generic API hook
-│   │   │   └── useToast.ts          # Toast notifications hook
-│   │   ├── components/
-│   │   │   ├── ui/                  # Reusable UI primitives
-│   │   │   │   ├── Button.tsx
-│   │   │   │   ├── Input.tsx
-│   │   │   │   ├── Card.tsx
-│   │   │   │   ├── Modal.tsx
-│   │   │   │   ├── Badge.tsx
-│   │   │   │   ├── Spinner.tsx
-│   │   │   │   └── Toast.tsx
-│   │   │   ├── layout/
-│   │   │   │   ├── Navbar.tsx       # Top navigation
-│   │   │   │   ├── Sidebar.tsx      # Side navigation
-│   │   │   │   ├── Footer.tsx
-│   │   │   │   └── Layout.tsx       # Root layout wrapper
-│   │   │   ├── features/
-│   │   │   │   ├── auth/
-│   │   │   │   │   ├── LoginForm.tsx
-│   │   │   │   │   └── RegisterForm.tsx
-│   │   │   │   ├── awareness/
-│   │   │   │   │   ├── AwarenessCard.tsx
-│   │   │   │   │   ├── SelfExamGuide.tsx
-│   │   │   │   │   └── RiskFactorQuiz.tsx
-│   │   │   │   ├── detection/
-│   │   │   │   │   ├── ImageUploader.tsx
-│   │   │   │   │   ├── SymptomChecker.tsx
-│   │   │   │   │   └── DetectionResult.tsx
-│   │   │   │   ├── support/
-│   │   │   │   │   ├── CounsellingCard.tsx
-│   │   │   │   │   └── MotivationalFeed.tsx
-│   │   │   │   ├── community/
-│   │   │   │   │   ├── ForumPost.tsx
-│   │   │   │   │   └── ForumList.tsx
-│   │   │   │   ├── medicine/
-│   │   │   │   │   ├── MedicineSearch.tsx
-│   │   │   │   │   └── PharmacyCard.tsx
-│   │   │   │   └── hospital/
-│   │   │   │       ├── HospitalMap.tsx
-│   │   │   │       └── HospitalCard.tsx
-│   │   │   └── pages/
-│   │   │       ├── HomePage.tsx
-│   │   │       ├── AuthPage.tsx
-│   │   │       ├── DashboardPage.tsx
-│   │   │       ├── AwarenessPage.tsx
-│   │   │       ├── DetectionPage.tsx
-│   │   │       ├── SupportPage.tsx
-│   │   │       ├── CommunityPage.tsx
-│   │   │       ├── MedicinePage.tsx
-│   │   │       └── HospitalPage.tsx
-│   │   ├── App.tsx                  # Root component + Router
-│   │   ├── main.tsx                 # Entry point
-│   │   └── vite-env.d.ts
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── tailwind.config.ts
-│   └── vite.config.ts
-│
-├── backend/                         # Python Flask API
-│   ├── app/
-│   │   ├── __init__.py              # Flask app factory
-│   │   ├── models/
-│   │   │   ├── user.py              # User model (MongoDB)
-│   │   │   ├── post.py              # Community post model
-│   │   │   ├── medicine.py          # Medicine model
-│   │   │   └── hospital.py          # Hospital model
-│   │   ├── routes/
-│   │   │   ├── auth.py              # /api/auth/*
-│   │   │   ├── detection.py         # /api/detect/*
-│   │   │   ├── awareness.py         # /api/awareness/*
-│   │   │   ├── community.py         # /api/community/*
-│   │   │   ├── medicine.py          # /api/medicine/*
-│   │   │   └── hospital.py          # /api/hospital/*
-│   │   └── services/
-│   │       ├── ml_service.py        # TensorFlow model inference
-│   │       ├── cloud_storage.py     # Firebase/Cloudinary upload
-│   │       └── email_service.py     # Email notifications
-│   ├── config/
-│   │   └── config.py                # App configuration
-│   ├── ml/
-│   │   ├── model/                   # Saved TF model files
-│   │   ├── train.py                 # Model training script
-│   │   └── preprocess.py            # Image preprocessing
-│   ├── tests/
-│   │   ├── test_auth.py
-│   │   ├── test_detection.py
-│   │   └── test_medicine.py
-│   ├── run.py                       # App entry point
-│   └── requirements.txt
-│
-└── docs/
-    ├── API.md                       # API documentation
-    └── SETUP.md                     # Setup instructions
+```text
+hope-complete-app/
+  backend/
+    app/
+      routes/              Flask REST API routes
+      services/            AI and upload services
+      config.py            Environment configuration
+      db.py                MongoDB/JSON storage adapter
+      seeds.py             Demo data seeding
+    ml/                    Real-dataset ML training scripts
+    requirements.txt
+    requirements-ai.txt
+    run.py
+    seed.py
+    Dockerfile
+  frontend/
+    src/
+      components/
+      context/
+      lib/
+      pages/
+      App.tsx
+      main.tsx
+    package.json
+    tailwind.config.js
+    Dockerfile
+    nginx.conf
+  docs/
+    api-endpoints.md
+    ai-model-integration.md
+    deployment-checklist.md
+    real-dataset-ml-training.md
+  docker-compose.yml
+  IMPLEMENTATION_GUIDE.md
 ```
 
+## Quick start without Docker
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-* Node.js (v18 or higher)
-* Python (v3.10 or higher)
-* MongoDB Atlas account
-* npm or yarn
-
----
-
-## ⚙️ Installation
-
-### 1️⃣ Clone the Repository
+### 1. Start the backend
 
 ```bash
-git clone https://github.com/your-username/hope-project.git
-cd hope-project
+cd backend
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+python seed.py
+python run.py
 ```
 
----
+The backend runs on `http://localhost:5000`.
 
-### 2️⃣ Frontend Setup
+If `MONGO_URI` is empty, the backend uses `backend/data/*.json` files automatically. This lets the app run immediately for demonstration and classroom evaluation. To use MongoDB Atlas, set `MONGO_URI` and `MONGO_DB_NAME` in `backend/.env`.
+
+### 2. Start the frontend
 
 ```bash
 cd frontend
 npm install
+cp .env.example .env
 npm run dev
 ```
 
-Frontend runs on:
+The frontend runs on `http://localhost:5173` and calls `http://localhost:5000/api`.
+
+### 3. Demo accounts
+
+Created by `python seed.py`:
+
+| Role | Email | Password |
+| --- | --- | --- |
+| Patient | patient@hope.local | Patient123! |
+| Doctor | doctor@hope.local | Doctor123! |
+| Pharmacist | pharmacist@hope.local | Pharmacist123! |
+| Admin | admin@hope.local | HopeAdmin123! |
+
+Change these passwords before any real deployment.
+
+## Quick start with Docker
 
 ```bash
-http://localhost:5173
+docker compose up --build
 ```
 
----
+Then open `http://localhost:8080`.
 
-### 3️⃣ Backend Setup
+Services:
+
+- Frontend: `http://localhost:8080`
+- Backend API: `http://localhost:5000/api`
+- MongoDB: `localhost:27017`
+
+## Environment variables
+
+Backend `.env`:
+
+```env
+FLASK_ENV=development
+SECRET_KEY=change-this-secret
+JWT_SECRET=change-this-jwt-secret
+JWT_EXPIRES_HOURS=24
+MONGO_URI=
+MONGO_DB_NAME=hope_app
+CORS_ORIGINS=http://localhost:5173,http://localhost:8080
+UPLOAD_FOLDER=uploads
+MAX_UPLOAD_MB=8
+MODEL_PATH=models/breast_screening.keras
+MODEL_LABELS_PATH=models/busi_labels.json
+MODEL_IMAGE_SIZE=224
+MODEL_PREPROCESSING=mobilenet_v2
+```
+
+Frontend `.env`:
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+## AI model integration summary
+
+The endpoint `/api/ai/analyze-image` accepts an image file. If no trained model is configured, it returns a clearly labelled demo heuristic. For the actual project model, train on a real public medical dataset; do not use synthetic images.
+
+Recommended academic model:
+
+- Dataset: BUSI or another real breast ultrasound dataset with normal, benign, and malignant classes.
+- Architecture: MobileNetV2 transfer-learning classifier.
+- Output: three-class probabilities for `benign`, `malignant`, and `normal`.
+- Training script: `backend/ml/train_busi_classifier.py`.
+- Synthetic data: not used.
+
+Training command:
 
 ```bash
 cd backend
 pip install -r requirements.txt
-python run.py
+pip install -r requirements-ai.txt
+python ml/train_busi_classifier.py \
+  --data datasets/BUSI \
+  --model-out models/breast_screening.keras \
+  --labels-out models/busi_labels.json \
+  --report-out reports/busi_training_report.json
 ```
 
-Backend runs on:
+Configure the backend after training:
 
-```bash
-http://localhost:5000
+```env
+MODEL_PATH=models/breast_screening.keras
+MODEL_LABELS_PATH=models/busi_labels.json
+MODEL_IMAGE_SIZE=224
+MODEL_PREPROCESSING=mobilenet_v2
 ```
 
----
+See `docs/real-dataset-ml-training.md` and `docs/ai-model-integration.md` for the complete training and safety workflow. Do not deploy the AI result as a diagnosis unless it has been validated, audited, and approved for the intended clinical use.
 
-## 📜 Available Scripts
+## Implementation phases
 
-### Frontend
+1. Requirement validation: confirm user roles, workflows, Sri Lankan provider/pharmacy sources, and clinical disclaimers.
+2. UI/UX: adapt the current warm responsive prototype, then test with patients/caregivers.
+3. Backend setup: configure MongoDB Atlas, JWT secrets, CORS, HTTPS, and audit logging.
+4. Core modules: awareness, self-exam, risk check, support, provider directory, medicine tracking.
+5. AI integration: connect validated model, define safety thresholds, and route uncertain cases to clinicians.
+6. Testing: unit tests, API tests, accessibility checks, mobile checks, security checks.
+7. Deployment: containerize, configure CI/CD, seed production data, and monitor logs.
+8. Maintenance: keep medical content reviewed by professionals and update inventory/provider data regularly.
 
-```bash
-npm run dev        # Start development server
-npm run build      # Build production files
-npm run preview    # Preview production build
-npm run lint       # Run ESLint
-```
+## Important production checklist
 
-### Backend
-
-```bash
-python run.py      # Start Flask server
-pytest             # Run backend tests
-```
-
----
-
-## 🎯 Core Modules
-
-| Module         | Description                        |
-| -------------- | ---------------------------------- |
-| Authentication | User registration & login          |
-| AI Detection   | Breast cancer prediction system    |
-| Awareness      | Educational resources & guides     |
-| Community      | User discussion platform           |
-| Support        | Counselling & motivational content |
-| Medicine       | Medicine and pharmacy information  |
-| Hospital       | Hospital search & maps             |
-
----
-
-## 🤖 AI Detection Workflow
-
-1. User uploads a breast scan image
-2. Image preprocessing is performed
-3. TensorFlow model analyzes the image
-4. Prediction results are generated
-5. Detection report is displayed to the user
-
----
-
-## 🧪 Testing
-
-Backend tests are available inside:
-
-```bash
-backend/tests/
-```
-
-Run tests using:
-
-```bash
-pytest
-```
-
----
-
-## 👥 Team
-
-| Role         | Name                     | Student ID |
-| ------------ | ------------------------ | ---------- |
-| Group Leader | S S A M Wijesiriwardhane | 22UG3-0210 |
-| Member 1    | H.G. Punara Punsisi      | 22UG3-0873 |
-| Member 2     | J.H. Naduni Hansika      | 22UG3-0315 |
-
----
-
-## 🎓 Academic Project
-
-This project was developed for:
-
-* **Course:** CIT310 – Information Technology Project
-* **Project Code:** #CIT310_01_26_56
-* **Institution:** SLTC Research University
-* **Batch:** 2022–2026
-
----
-
-## 🤝 Contributing
-
-This is an academic group project. For major modifications or feature additions, please coordinate with the project team before making changes.
-
----
-
-## 📝 License
-
-This project is developed for educational and academic purposes only.
-
----
-
-## 🔗 Links
-
-* Repository: Add GitHub Repository Link
-* API Documentation: `/docs/API.md`
-* Setup Guide: `/docs/SETUP.md`
-
----
-
-### ❤️ Made with hope, care, and technology for better healthcare awareness.
-
+- Use HTTPS only.
+- Replace all demo users and demo data.
+- Use strong secrets and rotate them.
+- Enable MongoDB Atlas network restrictions.
+- Add role-based admin screens before letting pharmacies/providers edit live data.
+- Store uploads in Cloudinary, Firebase Storage, S3, or another managed secure storage service.
+- Add consent screens before image upload and community posting.
+- Add moderation for community content.
+- Add backups and audit logs.
+- Add a clinician-approved content review workflow.
+- Add automated tests and run them in CI/CD.
