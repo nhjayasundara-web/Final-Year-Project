@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "emotional-support",
+    "title": "Emotional support during uncertainty",
+    "category": "Support",
+    "summary": "Practical steps for anxiety, waiting periods, and caregiver support.",
+    "readingMinutes": 4,
+    "lastReviewed": "2026-03-01",
+    "nextReviewDate": "2026-09-01",
+    "sources": [
+      "Project counsellor review recommended"
+    ],
+    "reviewStatus": "published",
+    "countryApplicability": "Sri Lanka",
+    "clinicalDisclaimer": "Educational support only. Not diagnostic advice.",
+    "version": "1.0",
+    "reviewedBy": "Hope Clinical Reviewer",
+    "reviewerRole": "doctor",
+    "content": [
+      "Waiting for appointments or results can be stressful. It can help to write down questions, bring a trusted person, and keep a record of symptoms and dates.",
+      "Breathing exercises, short walks, prayer or meditation, journaling, and speaking with a counsellor can support mental well-being.",
+      "Seek urgent support if distress feels overwhelming or if you feel unsafe."
+    ],
+    "id": "c2b401dd-9166-475d-916a-2713eac99b36",
+    "createdAt": "2026-05-14T18:38:09.244850+00:00",
+    "updatedAt": "2026-05-14T18:38:09.244850+00:00"
+  },
+  {
+    "slug": "treatment-navigation",
+    "title": "Navigating treatment and recovery",
+    "category": "Recovery",
+    "summary": "Use care teams, medicine tracking, and support networks during recovery.",
+    "readingMinutes": 5,
+    "lastReviewed": "2026-03-01",
+    "nextReviewDate": "2026-09-01",
+    "sources": [
+      "WHO multidisciplinary care guidance"
+    ],
+    "reviewStatus": "published",
+    "countryApplicability": "Sri Lanka",
+    "clinicalDisclaimer": "Educational support only. Not diagnostic advice.",
+    "version": "1.0",
+    "reviewedBy": "Hope Clinical Reviewer",
+    "reviewerRole": "doctor",
+    "content": [
+      "Breast cancer care may involve surgery, radiotherapy, medicines, rehabilitation, nutrition, and mental health support depending on the diagnosis.",
+      "Patient navigation helps people move through appointments, tests, treatment, medicines, and recovery support.",
+      "Use HOPE to organize questions, find support resources, and request help from providers or pharmacies."
+    ],
+    "id": "6f75f6d5-284e-45c6-8836-fc0529824af3",
+    "createdAt": "2026-05-14T18:38:09.244964+00:00",
+    "updatedAt": "2026-05-14T18:38:09.244964+00:00"
+  }
+]
