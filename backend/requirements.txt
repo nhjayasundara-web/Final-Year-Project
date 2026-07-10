@@ -1,0 +1,9 @@
+Flask==3.0.3
+flask-cors==4.0.1
+pymongo==4.8.0
+python-dotenv==1.0.1
+PyJWT==2.8.0
+Werkzeug==3.0.3
+Pillow==10.4.0
+numpy==1.26.4
+gunicorn==22.0.0
