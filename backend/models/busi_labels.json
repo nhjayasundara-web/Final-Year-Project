@@ -1,0 +1,16 @@
+{
+  "classes": [
+    "benign",
+    "malignant",
+    "normal"
+  ],
+  "class_to_index": {
+    "benign": 0,
+    "malignant": 1,
+    "normal": 2
+  },
+  "source_dataset": "BUSI or compatible real breast ultrasound dataset",
+  "preprocessing": "mobilenet_v2",
+  "image_size": 224,
+  "synthetic_data_used": false
+}
