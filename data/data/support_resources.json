@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Breathing reset",
+    "type": "Exercise",
+    "description": "Inhale for 4 counts, hold for 2, exhale for 6. Repeat five times before appointments or scans.",
+    "id": "8a2a881b-c962-4086-95e5-cb1550404b66",
+    "createdAt": "2026-05-14T18:39:17.296539+00:00",
+    "updatedAt": "2026-05-14T18:39:17.296539+00:00"
+  },
+  {
+    "title": "Question list for appointments",
+    "type": "Preparation",
+    "description": "Write symptoms, dates, medicines, allergies, family history, and the top three questions you need answered.",
+    "id": "d2fb645f-df64-4722-b3cf-3ede893d1092",
+    "createdAt": "2026-05-14T18:39:17.296658+00:00",
+    "updatedAt": "2026-05-14T18:39:17.296658+00:00"
+  },
+  {
+    "title": "Caregiver check-in",
+    "type": "Caregiver",
+    "description": "Ask: What do you need today? What can I take off your list? Who should we contact next?",
+    "id": "15dbda64-30a0-4de4-868b-8a23abefa452",
+    "createdAt": "2026-05-14T18:39:17.296775+00:00",
+    "updatedAt": "2026-05-14T18:39:17.296775+00:00"
+  },
+  {
+    "title": "Urgent help reminder",
+    "type": "Safety",
+    "description": "If you feel unsafe, severely distressed, or at risk of self-harm, contact local emergency services or a trusted person immediately.",
+    "id": "b30853dd-1a57-43d4-8d37-b5418813fe58",
+    "createdAt": "2026-05-14T18:39:17.296903+00:00",
+    "updatedAt": "2026-05-14T18:39:17.296903+00:00"
+  },
+  {
+    "title": "Question list for appointments",
+    "type": "Preparation",
+    "description": "Write symptoms, dates, medicines, allergies, family history, and the top three questions you need answered.",
+    "id": "8dec5c7c-6cad-48e8-bf0d-d31ac78bfc1a",
+    "createdAt": "2026-05-14T18:39:17.296995+00:00",
+    "updatedAt": "2026-05-14T18:39:17.296995+00:00"
+  },
+  {
+    "title": "Caregiver check-in",
+    "type": "Caregiver",
+    "description": "Ask: What do you need today? What can I take off your list? Who should we contact next?",
+    "id": "abd72546-72cd-45a3-a12a-c2fcc520e9c8",
+    "createdAt": "2026-05-14T18:39:17.297226+00:00",
+    "updatedAt": "2026-05-14T18:39:17.297226+00:00"
+  },
+  {
+    "title": "Urgent help reminder",
+    "type": "Safety",
+    "description": "If you feel unsafe, severely distressed, or at risk of self-harm, contact local emergency services or a trusted person immediately.",
+    "id": "5db0c5c1-e3e9-4df7-88cf-5a146d991b01",
+    "createdAt": "2026-05-14T18:39:17.297406+00:00",
+    "updatedAt": "2026-05-14T18:39:17.297406+00:00"
+  }
+]
